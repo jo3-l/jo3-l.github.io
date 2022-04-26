@@ -1,0 +1,119 @@
+<!doctype html><html lang=en-us data-theme><head><meta charset=utf-8><meta name=HandheldFriendly content="True"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=referrer content="no-referrer-when-downgrade"><title>Proving the Sum of Exponents Law Without Calculus - Joe's Blog</title><meta name=description content="How I learned I really didn't understand exponents"><link rel=icon type=image/x-icon href=https://jo3-l.github.io/favicon.ico><link rel=apple-touch-icon-precomposed href=https://jo3-l.github.io/favicon.png><style>body{visibility:hidden;opacity:0}</style><noscript><style>body{visibility:visible;opacity:1}</style></noscript><link rel=stylesheet href=https://jo3-l.github.io/css/style.min.11a145700f1d8e9ff662852c740aee761234300a0b4e102cce164515697d539f.css integrity="sha256-EaFFcA8djp/2YoUsdArudhI0MAoLThAszhZFFWl9U58="><script src=https://jo3-l.github.io/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js type=text/javascript integrity="sha256-plr+kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script><meta property="og:title" content="Proving the Sum of Exponents Law Without Calculus"><meta property="og:description" content="How I learned I really didn't understand exponents"><meta property="og:type" content="article"><meta property="og:url" content="https://jo3-l.github.io/posts/proving-the-sum-of-exponents-law-without-calculus/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-04-24T00:00:00+00:00"><meta property="article:modified_time" content="2021-04-24T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Proving the Sum of Exponents Law Without Calculus"><meta name=twitter:description content="How I learned I really didn't understand exponents"></head><body><a class=skip-main href=#main>Skip to main content</a><div class=container><header class=common-header><div class=header-top><h1 class=site-title><a href=/>Joe's Blog</a></h1><ul class=social-icons><li><a href=https://github.com/jo3-l/ title=Github rel=me><span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></a></li><li><a href=mailto:jo3.l.dev@outlook.com title=Email rel=me><span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M464 64H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 4e2V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V4e2H48z"/></svg></span></a></li></ul></div><nav><a href=https://jo3-l.github.io/about/ title>About</a>
+<a href=https://jo3-l.github.io/tags/ title>Tags</a>
+<a href=https://jo3-l.github.io/posts/ title>Archive</a></nav><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css integrity=sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js integrity=sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+<script>document.addEventListener("DOMContentLoaded",()=>{renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script></header><main id=main tabindex=-1><article class="post h-entry"><div class=post-header><header><h1 class="p-name post-title">Proving the Sum of Exponents Law Without Calculus</h1></header></div><div class="content e-content"><p>Recently, while reading about proofs of logarithm laws, I came across the sum of exponents law; $b^x \cdot b^y = b^{x + y}$.
+Given that this well-known rule is amongst the first things taught when students are introduced to exponentials in pre-calculus, I naively assumed that it would be easy to prove using pre-calculus methods.</p><p>I was wrong.</p><h1 id=the-sum-of-exponents-law>The Sum of Exponents Law
+<span><a href=#the-sum-of-exponents-law><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h1><p>The sum of exponents law goes like such:</p><blockquote><p>$b^x \cdot b^y = b^{x + y}$</p></blockquote><p>It turns out that, as is, this formulation is actually incorrect; the sum of exponents law does <em>not</em> hold for all $b \in \mathbb{R}, x \in \mathbb{R}, y \in \mathbb{R}$.
+As a counterexample, consider $b = -1, x = -1, y = 1/2.$ Substituting these values gives</p><p>$$
+\begin{align*}
+L.S. &= (-1)^{-1} \cdot (-1)^{1/2} \\
+&= -1 \cdot \sqrt{-1} \\
+&= -\sqrt{-1} \\
+&= i
+\end{align*}
+$$</p><p>and</p><p>$$
+\begin{align*}
+R.S. &= (-1)^{-1 + 1/2} \\
+&= (-1)^{-{1/2}} \\
+&= \frac{1}{\sqrt{-1}} \\
+&= \sqrt{-1} \\
+&= -i
+\end{align*}
+$$</p><p>which are clearly not equal.</p><p>To fix this, we need to either restrict $b$ to be non-negative or $x, y$ to be integral. For the purposes of this article, we will go with the first option. Thus, our revised law is like such:</p><blockquote><p>For all $b > 0, x \in \mathbb{R}, y \in \mathbb{R}$, $b^x \cdot b^y = b^{x + y}$.</p></blockquote><p>How exactly do we go about proving this statement without resorting to calculus? One method is to start by proving the statement for integral exponents only, then use that to prove correctness for rational exponents, and finally extend to real exponents.</p><h1 id=integral-exponents>Integral Exponents
+<span><a href=#integral-exponents><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h1><p>Intuitively, it&rsquo;s not hard to see why the sum of exponents law holds for integral exponents, assuming that exponentiation is defined as repeated multiplication:</p><p>$$
+b^x \cdot b^y = \overbrace{\underbrace{b \times b \times \cdots \times b}_{\text{$x$ times}} \times \underbrace{b \times b \times \cdots \times b}_{\text{$y$ times}}}^{\text{$x + y$ times}}
+$$</p><p>However, proving it rigorously is a bit more difficult. We start by defining exponentiation as a recursive function:</p><p>$$
+b^x =
+\begin{cases}
+1 / b^{-x}, & \text{if $x &lt; 0$} \\
+1, & \text{if $x = 0$} \\
+b \cdot b^{x-1}, & \text{otherwise}
+\end{cases}
+$$</p><p>Using this definition, we will prove that the law holds for exponents that are positive integers using induction, and then extend that to all integers.</p><h2 id=lemma-11>Lemma 1.1
+<span><a href=#lemma-11><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><blockquote><p>$b^{x + y} = b^x \cdot b^y$ for all $b \in \mathbb{R^+}, x \in \mathbb{Z^+}, y \in \mathbb{Z^+}$.</p></blockquote><p><em>Proof.</em> We proceed by induction on $x$.</p><p><strong>Base Case:</strong> If $x = 1$, then $b^{x + y} = b^{y + 1} = b \cdot b^y$ by definition of exponentiation, which is equal to $b^x \cdot b^y = b^1 \cdot b^y = b \cdot b^y$.</p><p><strong>Induction Step:</strong> Let $x$ be an arbitrary positive integer and suppose $b^{x + y} = b^x \cdot b^y$ for all positive integers $y$. Then</p><p>$$
+\begin{align*}
+b^{(x + 1) + y} &= b^{x + y + 1} \\
+&= b \cdot b^{x + y} && \text{(by definition of exponentiation)} \\
+&= b \cdot b^{x} \cdot b^y && \text{(by induction hypothesis)} \\
+&= b^{x + 1} \cdot b^y && \text{(by definition of exponentiation)}.
+\end{align*}
+$$</p><div align=right>$\square$</div><h2 id=lemma-12>Lemma 1.2
+<span><a href=#lemma-12><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><blockquote><p>$b^{x - y} = b^x \cdot b^{-y}$ for $x \in \mathbb{Z^+}, y \in \mathbb{Z^+}$ s.t. $x \geq y$.</p></blockquote><p><em>Proof.</em> We proceed by induction on $x$.</p><p><strong>Base Case:</strong> If $x = 1$, the only valid choice for $y$ is $1$. Substituting, we have $b^{1 - 1} = b^0 = 1$ which is equal to $b^1 \cdot b^{-1} = 1$.</p><p><strong>Induction Step:</strong> Let $x$ be an arbitrary positive integer and suppose $b^{x - y} = b^x \cdot b^{-y}$ for all positive integers $y$ s.t. $x \geq y$. Then</p><p>$$
+\begin{align*}
+b^{(x + 1) - y} &= b^{x - y + 1} \\
+&= b \cdot b^{x - y} && \text{(by definition of exponentiation)} \\
+&= b \cdot b^x \cdot b^{-y} && \text{(by induction hypothesis)} \\
+&= b^{x + 1} \cdot b^{-y} && \text{(by definition of exponentiation)}.
+\end{align*}
+$$</p><div align=right>$\square$</div><h2 id=theorem-13>Theorem 1.3
+<span><a href=#theorem-13><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><blockquote><p>$b^{x + y} = b^x \cdot b^y$ for all $b \in \mathbb{R^+}, x \in \mathbb{Z}, y \in \mathbb{Z}.$</p></blockquote><p><em>Proof.</em> If $x \in \mathbb{Z^+}, y \in \mathbb{Z^+}$ then the theorem is true by Lemma 1.1. Otherwise, we have the following cases.</p><p><strong>Case 1:</strong> <em>Exactly one of $x, y$ is negative.</em></p><p>W.L.O.G assume $x &lt; 0$ and $y > 0$. We consider two sub-cases: $|x| &lt; |y|$ and $|x| \geq |y|$. Note that since $x$ is negative, $|x| = -x$.</p><p>First consider $|x| &lt; |y|$. Then</p><p>$$
+\begin{align*}
+b^x \cdot b^y &= b^{-(-x)} \cdot b^y \\
+&= b^y \cdot b^{-(-x)} \\
+&= b^{y - (-x)} && \text{(by Lemma 1.2 as $y > -x$)} \\
+&= b^{x + y}.
+\end{align*}
+$$</p><p>Otherwise we have $|x| \geq |y|$. Taking the reciprocal of $b^x \cdot b^y$ yields</p><p>$$
+\begin{align*}
+\frac{1}{b^x \cdot b^y} &= \frac{1}{b^x} \cdot \frac{1}{b^y} \\
+&= b^{-x} \cdot b^{-y} && \text{(by definition of exponentiation)} \\
+&= b^{-x - y} && \text{(by Lemma 1.3 as $-x \geq y$)} \\
+&= b^{-(x + y)} \\
+&= \frac{1}{b^{x + y}} && \text{(by definition of exponentiation)}.
+\end{align*}
+$$</p><p>Thus, $\dfrac{1}{b^x \cdot b^y} = \dfrac{1}{b^{x + y}}$. Taking the reciprocal of both sides again gives the result.</p><p><strong>Case 2:</strong> <em>Both $x$ and $y$ are negative.</em></p><p>$$
+\begin{align*}
+b^x \cdot b^y &= \frac{1}{b^{-x}} \cdot \frac{1}{b^{-y}} \\
+&= \frac{1}{b^{-x} \cdot b^{-y}} \\
+&= \frac{1}{b^{-x - y}} && \text{(by Lemma 1.2 as $-x > 0, -y > 0$)} \\
+&= \frac{1}{b^{-(x + y)}} \\
+&= b^{x + y} && \text{(by definition of exponentiation)}.
+\end{align*}
+$$</p><p><strong>Case 3:</strong> <em>One or more of $x$, $y$ is 0.</em></p><p>W.L.O.G. assume $x = 0$. Then $b^x \cdot b^y = 1 \cdot b^y = b^y$ which is equal to $b^{x + y} = b^{0 + y} = b^y$ as desired.</p><div align=right>$\square$</div><h1 id=rational-exponents>Rational Exponents
+<span><a href=#rational-exponents><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h1><p>We now extend our proof to cover rational exponents. Before that, though, we need to prove one more lemma regarding exponentiation with integral exponents.</p><h2 id=lemma-21>Lemma 2.1
+<span><a href=#lemma-21><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><blockquote><p>$(ab)^n = a^n \cdot b^n$ for all $a \in \mathbb{R}, b \in \mathbb{R}, n \in \mathbb{Z}$.</p></blockquote><p><em>Proof.</em> We consider three cases: $n &lt; 0$, $n = 0$, and $n > 0$.</p><p><strong>Case 1:</strong> <em>$n$ is greater than $0$.</em></p><p>We proceed by induction on $n$.</p><p><strong>Base Case.</strong> If $n = 1$, then $(ab)^1 = a \cdot b = a^1 \cdot b^1$.</p><p><strong>Induction Step.</strong> Let $n$ be an arbitrary positive integer and suppose $(ab)^n = a^n \cdot b^n$ for all $a \in \mathbb{R}, b \in \mathbb{R}$. Then</p><p>$$
+\begin{align*}
+(ab)^{n + 1} &= ab \cdot (ab)^n && \text{(by definition of exponentiation)} \\
+&= ab \cdot a^n \cdot b^n && \text{(by induction hypothesis)} \\
+&= a^{n + 1} \cdot b^{n + 1} && \text{(by definition of exponentiation)}.
+\end{align*}
+$$</p><p><strong>Case 2:</strong> <em>$n$ is $0$.</em></p><p>Then $(ab)^n = 1 = a^n \cdot b^n = a^0 \cdot b^0$, as desired.</p><p><strong>Case 3:</strong> <em>$n$ is less than $0$.</em></p><p>Then</p><p>$$
+\begin{align*}
+(ab)^n &= \frac{1}{(ab)^{-n}} && \text{(by definition of exponentiation)} \\
+&= \frac{1}{a^{-n} \cdot b^{-n}} && \text{(by Case 1 as $-n > 0$)} \\
+&= \frac{1}{a^{-n}} \cdot \frac{1}{b^{-n}} \\
+&= a^{n} \cdot b^{n} && \text{(by definition of exponentiation)}.
+\end{align*}
+$$</p><div align=right>$\square$</div><p>Now that we&rsquo;ve finished that, let us define what exponentiation with rational exponents means.</p><p>For any real number $b > 0$ and positive integer $n$, let $b^{1/n}$ denote the unique positive rational number $r$ s.t. $r^n = b$.
+Then, for a rational number $\frac{p}{q}$ where $p \in \mathbb{Z}, q \in \mathbb{Z^+}$ are coprime, define $b^{\frac{p}{q}}$ to be equal to $(b^{1/q})^p$.</p><p>Proving that the sum of exponents law holds for rational exponents then reduces to the law for integral exponents.</p><h2 id=theorem-22>Theorem 2.2
+<span><a href=#theorem-22><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><blockquote><p>$b^{x + y} = b^x \cdot b^y$ for all $b > 0, x \in \mathbb{Q}, y \in \mathbb{Q}$.</p></blockquote><p>Write $x$ as $p/q$ where $p \in \mathbb{Z}, q \in \mathbb{Z^+}$ and $p, q$ are coprime. Likewise write $y$ as $r/s$ where $r$ and $s$ are similarly restricted.</p><p>Then the R.S. of the equation becomes $b^{\frac{p}{q}} \cdot b^{\frac{r}{s}}$. Taking the $qs$-th power of this expression yields</p><p>$$
+\begin{align*}
+(b^{\frac{p}{q}} \cdot b^{\frac{r}{s}})^{qs} &= b^{\frac{p}{q} \cdot qs} \cdot b^{\frac{r}{s} \cdot qs} && \text{(by Lemma 2.1)} \\
+&= b^{ps} \cdot b^{qr} \\
+&= b^{ps + qr} && \text{(by Theorem 1.3)}.
+\end{align*}
+$$</p><p>This is equivalent to the L.S. of the equation raised to the $qs$-th power, which is</p><p>$$
+\begin{align*}
+(b^{\frac{p}{q} + \frac{r}{s}})^{qs} &= b^{(\frac{p}{q} + \frac{r}{s}) \cdot qs} && \text{(by Lemma 2.1)} \\
+&= b^{\frac{p}{q} \cdot qs + \frac{r}{s} \cdot qs} \\
+&= b^{ps + qr}.
+\end{align*}
+$$</p><div align=right>$\square$</div><h1 id=real-exponents>Real Exponents
+<span><a href=#real-exponents><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h1><p>Finally, we can prove the sum of exponents law for real exponents. However, a problem emerges when we try to define exponentiation for real exponents.
+While it was relatively trivial to define exponentiation for integral exponents as repeated multiplication and rational exponents as a combination of n-th roots and integral exponentiation,
+it is not clear at first how we should go about doing the same for real exponents. For example, what exactly does $2^\pi$ mean?</p><p>It turns out that there are multiple ways of defining exponentiation for real exponents. The approach that we will take here approximates real exponents using rational exponents in such a way
+that the approximation is infinitely close to the actual value. For example, we can approximate $2^\pi$ as $2^3, 2^{3.1}, 2^{3.14}, 2^{3.141}, 2^{3.1415}, \cdots.$</p><p>Formally, for a real number $r$ and a base $b > 0$, we can define $b^r$ as follows. Let $Q$ be an infinite sequence of rational numbers that converges to $x$; that is, $\lim_{n \to \infty} Q_n = x$.
+Then $b^x$ can be defined as</p><p>$$
+\lim_{n \to \infty} b^{Q_n}
+$$</p><p>Since $Q_n$ is a rational number, using the laws of limits and convergent sequences yields the desired result. (I did say at the beginning of this article that we&rsquo;d try to avoid calculus, but we have to use
+a little for this part.)</p><h2 id=theorem-31>Theorem 3.1
+<span><a href=#theorem-31><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><blockquote><p>$b^{x + y} = b^x \cdot b^y$ for all $b > 0, x \in \mathbb{R}, y \in \mathbb{R}$.</p></blockquote><p><em>Proof.</em></p><p>$$
+\begin{align*}
+b^{x + y} &= \lim_{n \to \infty} b^{P_n + R_n} && \text{(where $\lim_{n \to \infty} P_n = x, \lim_{n \to \infty} R_n = y$)} \\
+&= b^{\lim_{n \to \infty} P_n + \lim_{n \to \infty} R_n} \\
+&= b^{\lim{n \to \infty} P_n} \cdot b^{\lim{n \to \infty} R_n} \\
+&= b^x \cdot b^y.
+\end{align*}
+$$</p><div align=right>$\square$</div></div><div class=post-info><div class="post-date dt-published">2021-04-24</div><a class="post-hidden-url u-url" href=https://jo3-l.github.io/posts/proving-the-sum-of-exponents-law-without-calculus/>https://jo3-l.github.io/posts/proving-the-sum-of-exponents-law-without-calculus/</a>
+<a href=https://jo3-l.github.io class="p-name p-author post-hidden-author h-card" rel=me>Joe L.</a><div class=post-taxonomies><ul class=post-tags><li><a href=https://jo3-l.github.io/tags/math/>#math</a></li></ul></div></div></article></main><footer class=common-footer><div class=common-footer-bottom><div class=copyright><p>© Joe L., 2022<br>Powered by <a target=_blank rel="noopener noreferrer" href=https://gohugo.io/>Hugo</a>, theme <a target=_blank rel="noopener noreferrer" href=https://github.com/mitrichius/hugo-theme-anubis>Anubis</a>.<br></p></div><script>const STORAGE_KEY="user-color-scheme",defaultTheme="auto-without-switcher";let currentTheme,switchButton,autoDefinedScheme=window.matchMedia("(prefers-color-scheme: dark)");const autoChangeScheme=e=>{currentTheme=e.matches?"dark":"light",document.documentElement.setAttribute("data-theme",currentTheme),changeButtonText()};document.addEventListener("DOMContentLoaded",function(){switchButton=document.querySelector(".theme-switcher"),currentTheme=detectCurrentScheme(),currentTheme=="dark"&&document.documentElement.setAttribute("data-theme","dark"),currentTheme=="auto"&&(autoChangeScheme(autoDefinedScheme),autoDefinedScheme.addListener(autoChangeScheme)),switchButton&&(changeButtonText(),switchButton.addEventListener("click",switchTheme,!1)),showContent()});function detectCurrentScheme(){return localStorage.getItem(STORAGE_KEY)?localStorage.getItem(STORAGE_KEY):defaultTheme?defaultTheme:window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":"light"}function changeButtonText(){switchButton&&(switchButton.textContent=currentTheme=="dark"?"Light theme":"Dark theme")}function switchTheme(){currentTheme=="dark"?(localStorage.setItem(STORAGE_KEY,"light"),document.documentElement.setAttribute("data-theme","light"),currentTheme="light"):(localStorage.setItem(STORAGE_KEY,"dark"),document.documentElement.setAttribute("data-theme","dark"),currentTheme="dark"),changeButtonText()}function showContent(){document.body.style.visibility="visible",document.body.style.opacity=1}</script></div><p class="h-card vcard"><a href=https://jo3-l.github.io class="p-name u-url url fn" rel=me>Joe L.</a></p></footer></div></body></html>

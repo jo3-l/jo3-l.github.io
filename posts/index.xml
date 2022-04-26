@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Joe's Blog</title><link>https://jo3-l.github.io/posts/</link><description>Joe's Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 24 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://jo3-l.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Proving the Sum of Exponents Law Without Calculus</title><link>https://jo3-l.github.io/posts/proving-the-sum-of-exponents-law-without-calculus/</link><pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate><guid>https://jo3-l.github.io/posts/proving-the-sum-of-exponents-law-without-calculus/</guid><description>&lt;p>Recently, while reading about proofs of logarithm laws, I came across the sum of exponents law; $b^x \cdot b^y = b^{x + y}$.
+Given that this well-known rule is amongst the first things taught when students are introduced to exponentials in pre-calculus, I naively assumed that it would be easy to prove using pre-calculus methods.&lt;/p>
+&lt;p>I was wrong.&lt;/p>
+&lt;h1 id="the-sum-of-exponents-law" >The Sum of Exponents Law
+&lt;span>
+&lt;a href="#the-sum-of-exponents-law">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;p>The sum of exponents law goes like such:&lt;/p>
+&lt;blockquote>
+&lt;p>$b^x \cdot b^y = b^{x + y}$&lt;/p>
+&lt;/blockquote>
+&lt;p>It turns out that, as is, this formulation is actually incorrect; the sum of exponents law does &lt;em>not&lt;/em> hold for all $b \in \mathbb{R}, x \in \mathbb{R}, y \in \mathbb{R}$.
+As a counterexample, consider $b = -1, x = -1, y = 1/2.$ Substituting these values gives&lt;/p>
+&lt;p>$$
+\begin{align*}
+L.S. &amp;amp;= (-1)^{-1} \cdot (-1)^{1/2} \\
+&amp;amp;= -1 \cdot \sqrt{-1} \\
+&amp;amp;= -\sqrt{-1} \\
+&amp;amp;= i
+\end{align*}
+$$&lt;/p>
+&lt;p>and&lt;/p>
+&lt;p>$$
+\begin{align*}
+R.S. &amp;amp;= (-1)^{-1 + 1/2} \\
+&amp;amp;= (-1)^{-{1/2}} \\
+&amp;amp;= \frac{1}{\sqrt{-1}} \\
+&amp;amp;= \sqrt{-1} \\
+&amp;amp;= -i
+\end{align*}
+$$&lt;/p>
+&lt;p>which are clearly not equal.&lt;/p>
+&lt;p>To fix this, we need to either restrict $b$ to be non-negative or $x, y$ to be integral. For the purposes of this article, we will go with the first option. Thus, our revised law is like such:&lt;/p>
+&lt;blockquote>
+&lt;p>For all $b &amp;gt; 0, x \in \mathbb{R}, y \in \mathbb{R}$, $b^x \cdot b^y = b^{x + y}$.&lt;/p>
+&lt;/blockquote>
+&lt;p>How exactly do we go about proving this statement without resorting to calculus? One method is to start by proving the statement for integral exponents only, then use that to prove correctness for rational exponents, and finally extend to real exponents.&lt;/p>
+&lt;h1 id="integral-exponents" >Integral Exponents
+&lt;span>
+&lt;a href="#integral-exponents">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;p>Intuitively, it&amp;rsquo;s not hard to see why the sum of exponents law holds for integral exponents, assuming that exponentiation is defined as repeated multiplication:&lt;/p>
+&lt;p>$$
+b^x \cdot b^y = \overbrace{\underbrace{b \times b \times \cdots \times b}_{\text{$x$ times}} \times \underbrace{b \times b \times \cdots \times b}_{\text{$y$ times}}}^{\text{$x + y$ times}}
+$$&lt;/p>
+&lt;p>However, proving it rigorously is a bit more difficult. We start by defining exponentiation as a recursive function:&lt;/p>
+&lt;p>$$
+b^x =
+\begin{cases}
+1 / b^{-x}, &amp;amp; \text{if $x &amp;lt; 0$} \\
+1, &amp;amp; \text{if $x = 0$} \\
+b \cdot b^{x-1}, &amp;amp; \text{otherwise}
+\end{cases}
+$$&lt;/p>
+&lt;p>Using this definition, we will prove that the law holds for exponents that are positive integers using induction, and then extend that to all integers.&lt;/p>
+&lt;h2 id="lemma-11" >Lemma 1.1
+&lt;span>
+&lt;a href="#lemma-11">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;blockquote>
+&lt;p>$b^{x + y} = b^x \cdot b^y$ for all $b \in \mathbb{R^+}, x \in \mathbb{Z^+}, y \in \mathbb{Z^+}$.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;em>Proof.&lt;/em> We proceed by induction on $x$.&lt;/p>
+&lt;p>&lt;strong>Base Case:&lt;/strong> If $x = 1$, then $b^{x + y} = b^{y + 1} = b \cdot b^y$ by definition of exponentiation, which is equal to $b^x \cdot b^y = b^1 \cdot b^y = b \cdot b^y$.&lt;/p>
+&lt;p>&lt;strong>Induction Step:&lt;/strong> Let $x$ be an arbitrary positive integer and suppose $b^{x + y} = b^x \cdot b^y$ for all positive integers $y$. Then&lt;/p>
+&lt;p>$$
+\begin{align*}
+b^{(x + 1) + y} &amp;amp;= b^{x + y + 1} \\
+&amp;amp;= b \cdot b^{x + y} &amp;amp;&amp;amp; \text{(by definition of exponentiation)} \\
+&amp;amp;= b \cdot b^{x} \cdot b^y &amp;amp;&amp;amp; \text{(by induction hypothesis)} \\
+&amp;amp;= b^{x + 1} \cdot b^y &amp;amp;&amp;amp; \text{(by definition of exponentiation)}.
+\end{align*}
+$$&lt;/p>
+&lt;div align="right">$\square$&lt;/div>
+&lt;h2 id="lemma-12" >Lemma 1.2
+&lt;span>
+&lt;a href="#lemma-12">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;blockquote>
+&lt;p>$b^{x - y} = b^x \cdot b^{-y}$ for $x \in \mathbb{Z^+}, y \in \mathbb{Z^+}$ s.t. $x \geq y$.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;em>Proof.&lt;/em> We proceed by induction on $x$.&lt;/p>
+&lt;p>&lt;strong>Base Case:&lt;/strong> If $x = 1$, the only valid choice for $y$ is $1$. Substituting, we have $b^{1 - 1} = b^0 = 1$ which is equal to $b^1 \cdot b^{-1} = 1$.&lt;/p>
+&lt;p>&lt;strong>Induction Step:&lt;/strong> Let $x$ be an arbitrary positive integer and suppose $b^{x - y} = b^x \cdot b^{-y}$ for all positive integers $y$ s.t. $x \geq y$. Then&lt;/p>
+&lt;p>$$
+\begin{align*}
+b^{(x + 1) - y} &amp;amp;= b^{x - y + 1} \\
+&amp;amp;= b \cdot b^{x - y} &amp;amp;&amp;amp; \text{(by definition of exponentiation)} \\
+&amp;amp;= b \cdot b^x \cdot b^{-y} &amp;amp;&amp;amp; \text{(by induction hypothesis)} \\
+&amp;amp;= b^{x + 1} \cdot b^{-y} &amp;amp;&amp;amp; \text{(by definition of exponentiation)}.
+\end{align*}
+$$&lt;/p>
+&lt;div align="right">$\square$&lt;/div>
+&lt;h2 id="theorem-13" >Theorem 1.3
+&lt;span>
+&lt;a href="#theorem-13">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;blockquote>
+&lt;p>$b^{x + y} = b^x \cdot b^y$ for all $b \in \mathbb{R^+}, x \in \mathbb{Z}, y \in \mathbb{Z}.$&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;em>Proof.&lt;/em> If $x \in \mathbb{Z^+}, y \in \mathbb{Z^+}$ then the theorem is true by Lemma 1.1. Otherwise, we have the following cases.&lt;/p>
+&lt;p>&lt;strong>Case 1:&lt;/strong> &lt;em>Exactly one of $x, y$ is negative.&lt;/em>&lt;/p>
+&lt;p>W.L.O.G assume $x &amp;lt; 0$ and $y &amp;gt; 0$. We consider two sub-cases: $|x| &amp;lt; |y|$ and $|x| \geq |y|$. Note that since $x$ is negative, $|x| = -x$.&lt;/p>
+&lt;p>First consider $|x| &amp;lt; |y|$. Then&lt;/p>
+&lt;p>$$
+\begin{align*}
+b^x \cdot b^y &amp;amp;= b^{-(-x)} \cdot b^y \\
+&amp;amp;= b^y \cdot b^{-(-x)} \\
+&amp;amp;= b^{y - (-x)} &amp;amp;&amp;amp; \text{(by Lemma 1.2 as $y &amp;gt; -x$)} \\
+&amp;amp;= b^{x + y}.
+\end{align*}
+$$&lt;/p>
+&lt;p>Otherwise we have $|x| \geq |y|$. Taking the reciprocal of $b^x \cdot b^y$ yields&lt;/p>
+&lt;p>$$
+\begin{align*}
+\frac{1}{b^x \cdot b^y} &amp;amp;= \frac{1}{b^x} \cdot \frac{1}{b^y} \\
+&amp;amp;= b^{-x} \cdot b^{-y} &amp;amp;&amp;amp; \text{(by definition of exponentiation)} \\
+&amp;amp;= b^{-x - y} &amp;amp;&amp;amp; \text{(by Lemma 1.3 as $-x \geq y$)} \\
+&amp;amp;= b^{-(x + y)} \\
+&amp;amp;= \frac{1}{b^{x + y}} &amp;amp;&amp;amp; \text{(by definition of exponentiation)}.
+\end{align*}
+$$&lt;/p>
+&lt;p>Thus, $\dfrac{1}{b^x \cdot b^y} = \dfrac{1}{b^{x + y}}$. Taking the reciprocal of both sides again gives the result.&lt;/p>
+&lt;p>&lt;strong>Case 2:&lt;/strong> &lt;em>Both $x$ and $y$ are negative.&lt;/em>&lt;/p>
+&lt;p>$$
+\begin{align*}
+b^x \cdot b^y &amp;amp;= \frac{1}{b^{-x}} \cdot \frac{1}{b^{-y}} \\
+&amp;amp;= \frac{1}{b^{-x} \cdot b^{-y}} \\
+&amp;amp;= \frac{1}{b^{-x - y}} &amp;amp;&amp;amp; \text{(by Lemma 1.2 as $-x &amp;gt; 0, -y &amp;gt; 0$)} \\
+&amp;amp;= \frac{1}{b^{-(x + y)}} \\
+&amp;amp;= b^{x + y} &amp;amp;&amp;amp; \text{(by definition of exponentiation)}.
+\end{align*}
+$$&lt;/p>
+&lt;p>&lt;strong>Case 3:&lt;/strong> &lt;em>One or more of $x$, $y$ is 0.&lt;/em>&lt;/p>
+&lt;p>W.L.O.G. assume $x = 0$. Then $b^x \cdot b^y = 1 \cdot b^y = b^y$ which is equal to $b^{x + y} = b^{0 + y} = b^y$ as desired.&lt;/p>
+&lt;div align="right">$\square$&lt;/div>
+&lt;h1 id="rational-exponents" >Rational Exponents
+&lt;span>
+&lt;a href="#rational-exponents">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;p>We now extend our proof to cover rational exponents. Before that, though, we need to prove one more lemma regarding exponentiation with integral exponents.&lt;/p>
+&lt;h2 id="lemma-21" >Lemma 2.1
+&lt;span>
+&lt;a href="#lemma-21">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;blockquote>
+&lt;p>$(ab)^n = a^n \cdot b^n$ for all $a \in \mathbb{R}, b \in \mathbb{R}, n \in \mathbb{Z}$.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;em>Proof.&lt;/em> We consider three cases: $n &amp;lt; 0$, $n = 0$, and $n &amp;gt; 0$.&lt;/p>
+&lt;p>&lt;strong>Case 1:&lt;/strong> &lt;em>$n$ is greater than $0$.&lt;/em>&lt;/p>
+&lt;p>We proceed by induction on $n$.&lt;/p>
+&lt;p>&lt;strong>Base Case.&lt;/strong> If $n = 1$, then $(ab)^1 = a \cdot b = a^1 \cdot b^1$.&lt;/p>
+&lt;p>&lt;strong>Induction Step.&lt;/strong> Let $n$ be an arbitrary positive integer and suppose $(ab)^n = a^n \cdot b^n$ for all $a \in \mathbb{R}, b \in \mathbb{R}$. Then&lt;/p>
+&lt;p>$$
+\begin{align*}
+(ab)^{n + 1} &amp;amp;= ab \cdot (ab)^n &amp;amp;&amp;amp; \text{(by definition of exponentiation)} \\
+&amp;amp;= ab \cdot a^n \cdot b^n &amp;amp;&amp;amp; \text{(by induction hypothesis)} \\
+&amp;amp;= a^{n + 1} \cdot b^{n + 1} &amp;amp;&amp;amp; \text{(by definition of exponentiation)}.
+\end{align*}
+$$&lt;/p>
+&lt;p>&lt;strong>Case 2:&lt;/strong> &lt;em>$n$ is $0$.&lt;/em>&lt;/p>
+&lt;p>Then $(ab)^n = 1 = a^n \cdot b^n = a^0 \cdot b^0$, as desired.&lt;/p>
+&lt;p>&lt;strong>Case 3:&lt;/strong> &lt;em>$n$ is less than $0$.&lt;/em>&lt;/p>
+&lt;p>Then&lt;/p>
+&lt;p>$$
+\begin{align*}
+(ab)^n &amp;amp;= \frac{1}{(ab)^{-n}} &amp;amp;&amp;amp; \text{(by definition of exponentiation)} \\
+&amp;amp;= \frac{1}{a^{-n} \cdot b^{-n}} &amp;amp;&amp;amp; \text{(by Case 1 as $-n &amp;gt; 0$)} \\
+&amp;amp;= \frac{1}{a^{-n}} \cdot \frac{1}{b^{-n}} \\
+&amp;amp;= a^{n} \cdot b^{n} &amp;amp;&amp;amp; \text{(by definition of exponentiation)}.
+\end{align*}
+$$&lt;/p>
+&lt;div align="right">$\square$&lt;/div>
+&lt;p>Now that we&amp;rsquo;ve finished that, let us define what exponentiation with rational exponents means.&lt;/p>
+&lt;p>For any real number $b &amp;gt; 0$ and positive integer $n$, let $b^{1/n}$ denote the unique positive rational number $r$ s.t. $r^n = b$.
+Then, for a rational number $\frac{p}{q}$ where $p \in \mathbb{Z}, q \in \mathbb{Z^+}$ are coprime, define $b^{\frac{p}{q}}$ to be equal to $(b^{1/q})^p$.&lt;/p>
+&lt;p>Proving that the sum of exponents law holds for rational exponents then reduces to the law for integral exponents.&lt;/p>
+&lt;h2 id="theorem-22" >Theorem 2.2
+&lt;span>
+&lt;a href="#theorem-22">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;blockquote>
+&lt;p>$b^{x + y} = b^x \cdot b^y$ for all $b &amp;gt; 0, x \in \mathbb{Q}, y \in \mathbb{Q}$.&lt;/p>
+&lt;/blockquote>
+&lt;p>Write $x$ as $p/q$ where $p \in \mathbb{Z}, q \in \mathbb{Z^+}$ and $p, q$ are coprime. Likewise write $y$ as $r/s$ where $r$ and $s$ are similarly restricted.&lt;/p>
+&lt;p>Then the R.S. of the equation becomes $b^{\frac{p}{q}} \cdot b^{\frac{r}{s}}$. Taking the $qs$-th power of this expression yields&lt;/p>
+&lt;p>$$
+\begin{align*}
+(b^{\frac{p}{q}} \cdot b^{\frac{r}{s}})^{qs} &amp;amp;= b^{\frac{p}{q} \cdot qs} \cdot b^{\frac{r}{s} \cdot qs} &amp;amp;&amp;amp; \text{(by Lemma 2.1)} \\
+&amp;amp;= b^{ps} \cdot b^{qr} \\
+&amp;amp;= b^{ps + qr} &amp;amp;&amp;amp; \text{(by Theorem 1.3)}.
+\end{align*}
+$$&lt;/p>
+&lt;p>This is equivalent to the L.S. of the equation raised to the $qs$-th power, which is&lt;/p>
+&lt;p>$$
+\begin{align*}
+(b^{\frac{p}{q} + \frac{r}{s}})^{qs} &amp;amp;= b^{(\frac{p}{q} + \frac{r}{s}) \cdot qs} &amp;amp;&amp;amp; \text{(by Lemma 2.1)} \\
+&amp;amp;= b^{\frac{p}{q} \cdot qs + \frac{r}{s} \cdot qs} \\
+&amp;amp;= b^{ps + qr}.
+\end{align*}
+$$&lt;/p>
+&lt;div align="right">$\square$&lt;/div>
+&lt;h1 id="real-exponents" >Real Exponents
+&lt;span>
+&lt;a href="#real-exponents">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;p>Finally, we can prove the sum of exponents law for real exponents. However, a problem emerges when we try to define exponentiation for real exponents.
+While it was relatively trivial to define exponentiation for integral exponents as repeated multiplication and rational exponents as a combination of n-th roots and integral exponentiation,
+it is not clear at first how we should go about doing the same for real exponents. For example, what exactly does $2^\pi$ mean?&lt;/p>
+&lt;p>It turns out that there are multiple ways of defining exponentiation for real exponents. The approach that we will take here approximates real exponents using rational exponents in such a way
+that the approximation is infinitely close to the actual value. For example, we can approximate $2^\pi$ as $2^3, 2^{3.1}, 2^{3.14}, 2^{3.141}, 2^{3.1415}, \cdots.$&lt;/p>
+&lt;p>Formally, for a real number $r$ and a base $b &amp;gt; 0$, we can define $b^r$ as follows. Let $Q$ be an infinite sequence of rational numbers that converges to $x$; that is, $\lim_{n \to \infty} Q_n = x$.
+Then $b^x$ can be defined as&lt;/p>
+&lt;p>$$
+\lim_{n \to \infty} b^{Q_n}
+$$&lt;/p>
+&lt;p>Since $Q_n$ is a rational number, using the laws of limits and convergent sequences yields the desired result. (I did say at the beginning of this article that we&amp;rsquo;d try to avoid calculus, but we have to use
+a little for this part.)&lt;/p>
+&lt;h2 id="theorem-31" >Theorem 3.1
+&lt;span>
+&lt;a href="#theorem-31">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;blockquote>
+&lt;p>$b^{x + y} = b^x \cdot b^y$ for all $b &amp;gt; 0, x \in \mathbb{R}, y \in \mathbb{R}$.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;em>Proof.&lt;/em>&lt;/p>
+&lt;p>$$
+\begin{align*}
+b^{x + y} &amp;amp;= \lim_{n \to \infty} b^{P_n + R_n} &amp;amp;&amp;amp; \text{(where $\lim_{n \to \infty} P_n = x, \lim_{n \to \infty} R_n = y$)} \\
+&amp;amp;= b^{\lim_{n \to \infty} P_n + \lim_{n \to \infty} R_n} \\
+&amp;amp;= b^{\lim{n \to \infty} P_n} \cdot b^{\lim{n \to \infty} R_n} \\
+&amp;amp;= b^x \cdot b^y.
+\end{align*}
+$$&lt;/p>
+&lt;div align="right">$\square$&lt;/div></description></item></channel></rss>
