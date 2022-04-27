@@ -246,8 +246,8 @@ a little for this part.)&lt;/p>
 &lt;p>$$
 \begin{align*}
 b^{x + y} &amp;amp;= \lim_{n \to \infty} b^{P_n + R_n} &amp;amp;&amp;amp; \text{(where $\lim_{n \to \infty} P_n = x, \lim_{n \to \infty} R_n = y$)} \\
-&amp;amp;= b^{\lim_{n \to \infty} P_n + \lim_{n \to \infty} R_n} \\
-&amp;amp;= b^{\lim_{n \to \infty} P_n} \cdot b^{\lim_{n \to \infty} R_n} \\
+&amp;amp;= \lim_{n \to \infty} b^{P_n} \cdot b^{R_n} \\
+&amp;amp;= \lim_{n \to \infty} b^{P_n} \cdot \lim_{n \to \infty} b^{R_n} \\
 &amp;amp;= b^x \cdot b^y.
 \end{align*}
 $$&lt;/p>

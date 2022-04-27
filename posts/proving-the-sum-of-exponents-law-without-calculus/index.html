@@ -110,8 +110,8 @@ a little for this part.)</p><h2 id=theorem-31>Theorem 3.1
 <span><a href=#theorem-31><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><blockquote><p>$b^{x + y} = b^x \cdot b^y$ for all $b > 0, x \in \mathbb{R}, y \in \mathbb{R}$.</p></blockquote><p><em>Proof.</em></p><p>$$
 \begin{align*}
 b^{x + y} &= \lim_{n \to \infty} b^{P_n + R_n} && \text{(where $\lim_{n \to \infty} P_n = x, \lim_{n \to \infty} R_n = y$)} \\
-&= b^{\lim_{n \to \infty} P_n + \lim_{n \to \infty} R_n} \\
-&= b^{\lim_{n \to \infty} P_n} \cdot b^{\lim_{n \to \infty} R_n} \\
+&= \lim_{n \to \infty} b^{P_n} \cdot b^{R_n} \\
+&= \lim_{n \to \infty} b^{P_n} \cdot \lim_{n \to \infty} b^{R_n} \\
 &= b^x \cdot b^y.
 \end{align*}
 $$</p><div align=right>$\square$</div></div><div class=post-info><div class="post-date dt-published">2022-04-24</div><a class="post-hidden-url u-url" href=https://jo3-l.github.io/posts/proving-the-sum-of-exponents-law-without-calculus/>https://jo3-l.github.io/posts/proving-the-sum-of-exponents-law-without-calculus/</a>
