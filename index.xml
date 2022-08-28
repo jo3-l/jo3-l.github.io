@@ -188,20 +188,21 @@ $$&lt;/p>
 &lt;p>&lt;strong>Case 2:&lt;/strong> &lt;em>$n$ is less than $0$.&lt;/em>&lt;/p>
 &lt;p>Taking the reciprocal of both sides gives $\frac{1}{a^n} = \frac{1}{b^n} \iff a^{-n} = b^{-n}$. As $-n$ is positive, we have $a = b$ by case 1, completing the proof.&lt;/p>
 &lt;div align="right">$\square$&lt;/div>
-&lt;h2 id="theorem-22" >Theorem 2.2
+&lt;h2 id="theorem-23" >Theorem 2.3
 &lt;span>
-&lt;a href="#theorem-22">
+&lt;a href="#theorem-23">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;blockquote>
 &lt;p>$b^{x + y} = b^x \cdot b^y$ for all $b \in \mathbb{R^+}, x \in \mathbb{Q}, y \in \mathbb{Q}$.&lt;/p>
 &lt;/blockquote>
+&lt;p>&lt;em>&lt;strong>Note:&lt;/strong> Unfortunately the proof for this theorem is presently incomplete; the identity $(a^b)^c = a^{bc}$ is used without justification.&lt;/em>&lt;/p>
 &lt;p>Write $x$ as $p/q$ where $p \in \mathbb{Z}, q \in \mathbb{Z^+}$ and $p, q$ are coprime. Likewise write $y$ as $r/s$ where $r$ and $s$ are similarly restricted.&lt;/p>
 &lt;p>Then the R.S. of the equation becomes $b^{\frac{p}{q}} \cdot b^{\frac{r}{s}}$. Taking the $qs$-th power of this expression yields&lt;/p>
 &lt;p>$$
 \begin{align*}
-(b^{\frac{p}{q}} \cdot b^{\frac{r}{s}})^{qs} &amp;amp;= b^{\frac{p}{q} \cdot qs} \cdot b^{\frac{r}{s} \cdot qs} &amp;amp;&amp;amp; \text{(by Lemma 2.1)} \\
+(b^{\frac{p}{q}} \cdot b^{\frac{r}{s}})^{qs} &amp;amp;= b^{\frac{p}{q} \cdot qs} \cdot b^{\frac{r}{s} \cdot qs} \\
 &amp;amp;= b^{ps} \cdot b^{qr} \\
 &amp;amp;= b^{ps + qr} &amp;amp;&amp;amp; \text{(by Theorem 1.3)}.
 \end{align*}
@@ -209,7 +210,7 @@ $$&lt;/p>
 &lt;p>This is equivalent to the L.S. of the equation raised to the $qs$-th power, which is&lt;/p>
 &lt;p>$$
 \begin{align*}
-(b^{\frac{p}{q} + \frac{r}{s}})^{qs} &amp;amp;= b^{(\frac{p}{q} + \frac{r}{s}) \cdot qs} &amp;amp;&amp;amp; \text{(by Lemma 2.1)} \\
+(b^{\frac{p}{q} + \frac{r}{s}})^{qs} &amp;amp;= b^{(\frac{p}{q} + \frac{r}{s}) \cdot qs} \\
 &amp;amp;= b^{\frac{p}{q} \cdot qs + \frac{r}{s} \cdot qs} \\
 &amp;amp;= b^{ps + qr}.
 \end{align*}
