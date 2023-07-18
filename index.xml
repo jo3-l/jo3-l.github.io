@@ -1,4 +1,162 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Joe's Blog</title><link>https://jo3-l.github.io/</link><description>Joe's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 24 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://jo3-l.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://jo3-l.github.io/about/</link><pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate><guid>https://jo3-l.github.io/about/</guid><description>&lt;p>Hey there! I&amp;rsquo;m Joe L., a high school student and programming enthusiast from Canada.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Joe's Blog</title><link>https://jo3-l.github.io/</link><description>Joe's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 18 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jo3-l.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Pressure and Equilibrium</title><link>https://jo3-l.github.io/posts/pressure-and-equilibrium/</link><pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate><guid>https://jo3-l.github.io/posts/pressure-and-equilibrium/</guid><description>&lt;p>Recently, while studying chemical equilibrium, I came across the following statement
+in my textbook:&lt;/p>
+&lt;blockquote>
+&lt;p>An increase in pressure favours the side of an equilibrium reaction that has
+the smaller number of gas molecules.&lt;/p>
+&lt;/blockquote>
+&lt;p>Although there is a simple explanation for why this statement holds true using
+Le Chatelier&amp;rsquo;s principle, I thought it&amp;rsquo;d be a fun exercise to derive it
+mathematically by comparison of the equilibrium constant $K_c$ and the reaction
+quotient $Q$. (More importantly, writing this blog post provides me an excuse to
+&lt;em>not&lt;/em> learn more chemistry and do math instead, which is always preferable.)&lt;/p>
+&lt;h1 id="outline-of-approach" >Outline of Approach
+&lt;span>
+&lt;a href="#outline-of-approach">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;p>Recall that if $Q &amp;lt; K_c$ then the products are favored and conversely if $Q &amp;gt;
+K_c$ the reactants are favored. Thus, if we can somehow show that, in the
+event of an increase in pressure, $Q$ is greater than $K_c$ if and only if
+there are fewer moles of gas on the reactant side (and similar for the case
+where $Q$ is smaller), then we&amp;rsquo;ll have proven the desired claim.&lt;/p>
+&lt;h1 id="proof" >Proof
+&lt;span>
+&lt;a href="#proof">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h1>&lt;p>Consider the general reaction&lt;/p>
+&lt;p>$$
+\ce{aA_{(g)} + bB_{(g)} + \dots &amp;lt;-&amp;gt; rR_{(g)} + sS_{(g)} + \dots}
+$$&lt;/p>
+&lt;p>where $A$, $B$, $\dots$ are the reactants and $R$, $S$, $\dots$ are the
+products.&lt;/p>
+&lt;p>Suppose the system is currently in equilibrium. Then the initial reaction quotient $Q_0$
+and the equilibrium constant $K_c$ must necessarily be equal, so&lt;/p>
+&lt;p>$$
+Q_0 = K_c = \frac{[R]^r[S]^s\cdots}{[A]^a[B]^b\cdots}. \tag{1}
+$$&lt;/p>
+&lt;p>Our goal now is to relate concentration to the total pressure of the system, say $P_0$.
+Recall that concentration $c = n/V$ where $n$ denotes the number of
+moles and the $V$ the volume. Rearranging the ideal gas law $PV = nRT$ to
+isolate $n/V$ yields&lt;/p>
+&lt;p>$$
+\frac{n}{V} = \frac{P}{RT} = c. \tag{2}
+$$&lt;/p>
+&lt;p>Note that we cannot directly substitute this back into Equation 1 yet as each
+gas has its own partial pressure &amp;ndash; that is, the $P$ for each gas is different.
+To account for this, recall that&lt;/p>
+&lt;p>$$
+p_X = p_{\Sigma} \frac{n_X}{n_{\Sigma}}
+$$&lt;/p>
+&lt;p>that is, the partial pressure is the total pressure scaled by the mole fraction.
+Combining this with Equation 2 yields an expression for the concentration of
+any gas (say $X$) in the reaction in terms of the total pressure of the system:&lt;/p>
+&lt;p>$$
+c_X = [X] = \frac{p_X}{RT} = \frac{P_0n_{\Sigma}}{RTn_X} \tag{3}
+$$&lt;/p>
+&lt;p>Substituting the final expression for concentration into Equation 1 and
+factoring out the part dependent on pressure, we get&lt;/p>
+&lt;p>$$
+\begin{align*}
+Q_0 = K_c &amp;amp;= \cfrac{\left(\cfrac{P_0n_{\Sigma}}{RTn_R}\right)^r\left(\cfrac{P_0n_{\Sigma}}{RTn_S}\right)^s\cdots}{\left(\cfrac{P_0n_{\Sigma}}{RTn_A}\right)^a\left(\cfrac{P_0n_{\Sigma}}{RTn_B}\right)^b\cdots} \\
+&amp;amp;= \cfrac{{P_0}^{r + s + \dots}}{{P_0}^{a + b + \dots}} \cfrac{\left(\cfrac{n_{\Sigma}}{RTn_R}\right)^r\left(\cfrac{n_{\Sigma}}{RTn_S}\right)^s\cdots}{\left(\cfrac{n_{\Sigma}}{RTn_A}\right)^a\left(\cfrac{n_{\Sigma}}{RTn_B}\right)^b\cdots}. \tag{4}
+\end{align*}
+$$&lt;/p>
+&lt;p>(&lt;em>Aside: Substituting the expression for concentration in terms of partial pressure gives us
+a rather interesting result; see &lt;a href="#appendix-1">Appendix 1&lt;/a>.&lt;/em>)&lt;/p>
+&lt;p>For brevity write
+$$ \Delta n = \overbrace{(r + s + \cdots)}^{\text{tot. num of product moles}} - \underbrace{(a + b + \cdots)}_{\text{tot. num of reactant moles}} \tag{5} $$
+such that the
+pressure factor in front is just ${P_0}^{\Delta n}$. Also put&lt;/p>
+&lt;p>$$
+C = \cfrac{\left(\cfrac{n_{\Sigma}}{RTn_R}\right)^r\left(\cfrac{n_{\Sigma}}{RTn_S}\right)^s\cdots}{\left(\cfrac{n_{\Sigma}}{RTn_A}\right)^a\left(\cfrac{n_{\Sigma}}{RTn_B}\right)^b\cdots}
+$$&lt;/p>
+&lt;p>so Equation 4 simplifies to just&lt;/p>
+&lt;p>$$
+Q_0 = K_c = C{P_0}^{\Delta n}. \tag{6}
+$$&lt;/p>
+&lt;p>Now consider what happens when the pressure is increased to $P_1$. The
+equilibrium constant $K_c$ does not change since it is only affected by
+temperature. What about the reaction quotient, $Q_1$? The factor $C$ from
+Equation 6 remains the same, so the only change is replacing $P_0$ with $P_1$:&lt;/p>
+&lt;p>$$
+Q_1 = C{P_1}^{\Delta n}.
+$$&lt;/p>
+&lt;p>Evidently the reaction quotient $Q_1$ is no longer equal to the equilibrium constant,
+so the equlibrium position will shift to restore equilibrium. To determine whether
+the forward or reverse reaction will be favored, we just need to compare $Q_1$ to $K_c$.
+Without loss of generality, consider the case where $Q_1$ is smaller:&lt;/p>
+&lt;p>$$
+\begin{align*}
+Q_1 &amp;amp;&amp;lt; K_c \\
+CP_1^{\Delta n} &amp;amp;&amp;lt; CP_0^{\Delta n} \\
+P_1^{\Delta n} &amp;amp;&amp;lt; P_0^{\Delta n}.
+\end{align*}
+$$&lt;/p>
+&lt;p>Since $P_1 &amp;gt; P_0$, this can only be the case if $\Delta n &amp;lt; 0$. But we defined $\Delta n$ as the
+total moles of gas on the product side subtract the total moles of gas on the reactant side, so&lt;/p>
+&lt;p>$$
+\begin{align*}
+\Delta n &amp;amp;&amp;lt; 0 \\
+\sum n_{\rm{products}} - \sum n_{\rm{reactants}} &amp;amp;&amp;lt; 0 \\
+\sum n_{\rm{products}} &amp;amp;&amp;lt; \sum n_{\rm{reactants}}.
+\end{align*}
+$$&lt;/p>
+&lt;p>In other words, $Q_1 &amp;lt; K_c$ if and only if there are fewer moles of gas on the
+product side. But $Q_1 &amp;lt; K_c$ also implies that the equilibrium position should
+shift rightward (favoring products.) The analysis for the case in which there are
+fewer moles of gas on the reactant side is similar &amp;ndash; the equilibrium position
+shifts leftward favoring reactants, which is what we wanted to show. $\square$&lt;/p>
+&lt;h2 id="appendix-1" >Appendix 1: Equilibrium Constant for Partial Pressures
+&lt;span>
+&lt;a href="#appendix-1">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>As part of our proof, we derived the following relationship (Equation 3):&lt;/p>
+&lt;p>$$
+c_X = [X] = \frac{p_X}{RT} = \frac{P_0n_{\Sigma}}{RTn_X}.
+$$&lt;/p>
+&lt;p>Recall that we originally substituted the final expression,&lt;/p>
+&lt;p>$$
+\frac{P_0n_{\Sigma}}{RTn_X}
+$$&lt;/p>
+&lt;p>back into the equilibrium constant expression (leading to Equation 4). However,
+if instead we substitute the expression&lt;/p>
+&lt;p>$$
+\frac{p_X}{RT}
+$$&lt;/p>
+&lt;p>then we get something rather intriguing:&lt;/p>
+&lt;p>$$
+\begin{align*}
+K_c &amp;amp;= \cfrac{\left(\cfrac{p_R}{RT}\right)^r\left(\cfrac{p_S}{RT}\right)^s\cdots}{\left(\cfrac{p_A}{RT}\right)^a\left(\cfrac{p_B}{RT}\right)^b\cdots} \\
+&amp;amp;= \frac{{p_R}^r{p_S}^s\cdots}{{p_A}^a{p_B}^b\cdots} (RT)^{(a + b + \dots) - (r + s + \dots)}.
+\end{align*}
+$$&lt;/p>
+&lt;p>Indeed, observe that at constant temperature, the factor
+$$ (RT)^{(a + b + \dots) - (r + s + \dots)} $$
+is constant. But if the temperature is constant $K_c$ must, too, be constant,
+so that means the expression&lt;/p>
+&lt;p>$$
+\frac{{p_R}^r{p_S}^s\cdots}{{p_A}^a{p_B}^b\cdots}
+$$&lt;/p>
+&lt;p>is a constant as well! This expression may thus be viewed as a kind of
+equlibrium constant, the difference being that it is calculated using partial
+pressures instead of concentration. For this reason, it is often referred to as
+the
+&lt;a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Equilibria/Chemical_Equilibria/Calculating_An_Equilibrium_Concentrations/Calculating_an_Equilibrium_Constant_Using_Partial_Pressures">&lt;em>equilibrium constant using partial pressures&lt;/em>&lt;/a>,
+denoted $K_p$. The relationship between $K_c$ and $K_p$ is readily given by
+isolating $K_p$ in Equation 7:&lt;/p>
+&lt;p>$$
+\begin{align*}
+K_c &amp;amp;= K_p (RT)^{(a + b + \dots) - (r + s + \dots)} \\
+K_p &amp;amp;= K_c (RT)^{(r + s + \dots) - (a + b + \dots)} \\
+K_p &amp;amp;= K_c (RT)^{\Delta n}
+\end{align*}
+$$&lt;/p>
+&lt;p>where $\Delta n$ is as defined in Equation 5.&lt;/p></description></item><item><title>About</title><link>https://jo3-l.github.io/about/</link><pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate><guid>https://jo3-l.github.io/about/</guid><description>&lt;p>Hey there! I&amp;rsquo;m Joe L., a high school student and programming enthusiast from Canada.
 On the web, I usually go by some variation of &amp;ldquo;Joe&amp;rdquo; like &amp;ldquo;jo3-l&amp;rdquo;.&lt;/p>
 &lt;p>You might know me in real life (in which case, hello there!) or from &lt;a href="https://yagpdb.xyz">YAGPDB&lt;/a>, where I&amp;rsquo;m a bot admin and frequent contributor.&lt;/p>
 &lt;p>These days, I primarily work with Go on backend projects, but I&amp;rsquo;am also reasonably proficient with TypeScript, Python, Java, and C++, amongst other languages.
@@ -9,27 +167,27 @@ and a &lt;a href="https://github.com/jo3-l/spectre">general-purpose Discord bot&
 Otherwise, your best bet is likely email: &lt;code>jo3 [dot] l [dot] dev [at] outlook [dot] com&lt;/code>.&lt;/p></description></item><item><title>Exploring the Sum of Exponents Law</title><link>https://jo3-l.github.io/posts/exploring-the-sum-of-exponents-law/</link><pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate><guid>https://jo3-l.github.io/posts/exploring-the-sum-of-exponents-law/</guid><description>&lt;p>The sum of exponents law, $b^x \cdot b^y = b^{x+y}$, is well-known &amp;ndash; indeed,
 it&amp;rsquo;s one of the first properties that&amp;rsquo;s taught when students are introduced to
 the concept of exponentiation. Though it&amp;rsquo;s easy to reason intuitively as to why
-this property holds for integral exponents, for example,&lt;/p>
+this property holds for integral exponents:&lt;/p>
 &lt;p>$$
 2^{3 + 2} = 2^5 = \underbrace{2 \cdot 2 \cdot 2}_{2^3} \cdot \underbrace{2 \cdot 2}_{2^2}
 $$&lt;/p>
 &lt;p>it&amp;rsquo;s a little more difficult to provide a rigorous proof. In this post, we do
-just that. Not only is the result an interesting (albeit elementary) exercise in
-induction, but it also illustrates the complexity that can arise when trying to
-prove seemingly intuitive results.&lt;/p>
+just that using induction. (There exist more straightforward approaches using
+comparatively advanced methods, such as the properties of $\exp$, but we stick
+to the basics here because it makes for a more interesting post.)&lt;/p>
 &lt;h1 id="the-sum-of-exponents-law" >The Sum of Exponents Law
 &lt;span>
 &lt;a href="#the-sum-of-exponents-law">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h1>&lt;p>We can state the sum of exponents law formally like such:&lt;/p>
+&lt;/h1>&lt;p>Formally, the exponent law can be stated as follows:&lt;/p>
 &lt;blockquote>
-&lt;p>For all $b \in \mathbb{R^+}$, $x, y \in \mathbb{R}$, we have $b^x \cdot b^y = b^{x + y}$.&lt;/p>
+&lt;p>For positive real $b$, the property $$ b^x \cdot b^y = b^{x + y} $$ holds for
+integer $x$, $y$.&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;em>Note: we restrict the base to be positive as &lt;a href="https://math.stackexchange.com/questions/3219025/why-22-5-isnt-equal-to-2251-10">fractional powers of negative numbers aren&amp;rsquo;t uniquely defined&lt;/a>.&lt;/em>&lt;/p>
-&lt;p>In this post, we&amp;rsquo;ll only consider a more restricted variant of the property,
-where $x, y \in \mathbb{Z}$.&lt;/p>
+&lt;p>It&amp;rsquo;s worth noting that the law holds for $x$, $y$ real, but we concern ourselves
+only with the integer case in this blog.&lt;/p>
 &lt;h1 id="defining-exponentiation" >Defining Exponentiation
 &lt;span>
 &lt;a href="#defining-exponentiation">
@@ -40,7 +198,7 @@ where $x, y \in \mathbb{Z}$.&lt;/p>
 &lt;p>$$
 b^x =
 \begin{cases}
-1 / b^{-x}, &amp;amp; \text{if $x &amp;lt; 0$} \\
+\dfrac{1}{b^{-x}}, &amp;amp; \text{if $x &amp;lt; 0$} \\
 1, &amp;amp; \text{if $x = 0$} \\
 b \cdot b^{x-1}, &amp;amp; \text{if $x &amp;gt; 0$}
 \end{cases}
@@ -51,8 +209,7 @@ $$&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h1>&lt;p>&lt;em>Note: in the following statements, $b$ stands for an arbitrary positive real&lt;/em>.&lt;/p>
-&lt;blockquote>
+&lt;/h1>&lt;blockquote>
 &lt;p>$b^{x + y} = b^x \cdot b^y$ for all $x, y \in \mathbb{Z^+}$.&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;em>Proof.&lt;/em> We induct on $x$.&lt;/p>
@@ -65,10 +222,10 @@ definition, which is equal to $b^x \cdot b^y = b^1 \cdot b^y = b \cdot b^y$.&lt;
 b^{(x + 1) + y} &amp;amp;= b^{x + y + 1} \\
 &amp;amp;= b \cdot b^{x + y} &amp;amp;&amp;amp; \text{(by definition)} \\
 &amp;amp;= b \cdot b^{x} \cdot b^y &amp;amp;&amp;amp; \text{(by induction hypothesis)} \\
-&amp;amp;= b^{x + 1} \cdot b^y &amp;amp;&amp;amp; \text{(by definition)}.
+&amp;amp;= b^{x + 1} \cdot b^y &amp;amp;&amp;amp; \text{(by definition)}
 \end{align*}
 $$&lt;/p>
-&lt;div align="right">$\square$&lt;/div>
+&lt;p>as desired. $\square$&lt;/p>
 &lt;h1 id="lemma-12" >Lemma 1.2
 &lt;span>
 &lt;a href="#lemma-12">
@@ -90,10 +247,10 @@ $b^1 \cdot b^{-1} = 1$.&lt;/p>
 b^{(x + 1) - y} &amp;amp;= b^{x - y + 1} \\
 &amp;amp;= b \cdot b^{x - y} &amp;amp;&amp;amp; \text{(by definition)} \\
 &amp;amp;= b \cdot b^x \cdot b^{-y} &amp;amp;&amp;amp; \text{(by induction hypothesis)} \\
-&amp;amp;= b^{x + 1} \cdot b^{-y} &amp;amp;&amp;amp; \text{(by definition)}.
+&amp;amp;= b^{x + 1} \cdot b^{-y} &amp;amp;&amp;amp; \text{(by definition)}
 \end{align*}
 $$&lt;/p>
-&lt;div align="right">$\square$&lt;/div>
+&lt;p>as desired. $\square$&lt;/p>
 &lt;h1 id="theorem-13" >Theorem 1.3
 &lt;span>
 &lt;a href="#theorem-13">
@@ -141,5 +298,4 @@ b^x \cdot b^y &amp;amp;= \frac{1}{b^{-x}} \cdot \frac{1}{b^{-y}} \\
 $$&lt;/p>
 &lt;p>&lt;strong>Case 3.&lt;/strong> &lt;em>One or more of $x$, $y$ is 0.&lt;/em>&lt;/p>
 &lt;p>Without loss of generality suppose $x = 0$. Then $b^x \cdot b^y = 1 \cdot b^y =
-b^y$ which is equal to $b^{x + y} = b^{0 + y} = b^y$ as desired.&lt;/p>
-&lt;div align="right">$\square$&lt;/div></description></item></channel></rss>
+b^y$ which is equal to $b^{x + y} = b^{0 + y} = b^y$ as desired. $\square$&lt;/p></description></item></channel></rss>

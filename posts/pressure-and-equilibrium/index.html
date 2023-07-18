@@ -1,0 +1,104 @@
+<!doctype html><html lang=en-us data-theme><head><meta charset=utf-8><meta name=HandheldFriendly content="True"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=referrer content="no-referrer-when-downgrade"><title>Pressure and Equilibrium - Joe's Blog</title><meta name=description content="A mathematical explanation of the effect of changes in pressure on equilibrium position."><link rel=icon type=image/x-icon href=https://jo3-l.github.io/favicon.ico><link rel=apple-touch-icon-precomposed href=https://jo3-l.github.io/favicon.png><style>body{visibility:hidden;opacity:0}</style><noscript><style>body{visibility:visible;opacity:1}</style></noscript><link rel=stylesheet href=https://jo3-l.github.io/css/style.min.11a145700f1d8e9ff662852c740aee761234300a0b4e102cce164515697d539f.css integrity="sha256-EaFFcA8djp/2YoUsdArudhI0MAoLThAszhZFFWl9U58="><script src=https://jo3-l.github.io/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js type=text/javascript integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script><meta property="og:title" content="Pressure and Equilibrium"><meta property="og:description" content="A mathematical explanation of the effect of changes in pressure on equilibrium position."><meta property="og:type" content="article"><meta property="og:url" content="https://jo3-l.github.io/posts/pressure-and-equilibrium/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-07-18T00:00:00+00:00"><meta property="article:modified_time" content="2023-07-18T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Pressure and Equilibrium"><meta name=twitter:description content="A mathematical explanation of the effect of changes in pressure on equilibrium position."></head><body><a class=skip-main href=#main>Skip to main content</a><div class=container><header class=common-header><div class=header-top><h1 class=site-title><a href=/>Joe's Blog</a></h1><ul class=social-icons><li><a href=https://github.com/jo3-l/ title=Github rel=me><span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></a></li><li><a href=mailto:jo3.l.dev@outlook.com title=Email rel=me><span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M464 64H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 4e2V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V4e2H48z"/></svg></span></a></li><li><a href=https://jo3-l.github.io/index.xml title=RSS rel=me><span class=inline-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentcolor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328.0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765.0 183.105.0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686.0 38.981.0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg></span></a></li></ul></div><nav><a href=https://jo3-l.github.io/about/ title>About</a>
+<a href=https://jo3-l.github.io/tags/ title>Tags</a>
+<a href=https://jo3-l.github.io/posts/ title>Archive</a></nav></header><main id=main tabindex=-1><article class="post h-entry"><div class=post-header><header><h1 class="p-name post-title">Pressure and Equilibrium</h1></header></div><div class="content e-content"><p>Recently, while studying chemical equilibrium, I came across the following statement
+in my textbook:</p><blockquote><p>An increase in pressure favours the side of an equilibrium reaction that has
+the smaller number of gas molecules.</p></blockquote><p>Although there is a simple explanation for why this statement holds true using
+Le Chatelier&rsquo;s principle, I thought it&rsquo;d be a fun exercise to derive it
+mathematically by comparison of the equilibrium constant $K_c$ and the reaction
+quotient $Q$. (More importantly, writing this blog post provides me an excuse to
+<em>not</em> learn more chemistry and do math instead, which is always preferable.)</p><h1 id=outline-of-approach>Outline of Approach
+<span><a href=#outline-of-approach><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h1><p>Recall that if $Q &lt; K_c$ then the products are favored and conversely if $Q >
+K_c$ the reactants are favored. Thus, if we can somehow show that, in the
+event of an increase in pressure, $Q$ is greater than $K_c$ if and only if
+there are fewer moles of gas on the reactant side (and similar for the case
+where $Q$ is smaller), then we&rsquo;ll have proven the desired claim.</p><h1 id=proof>Proof
+<span><a href=#proof><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h1><p>Consider the general reaction</p><p>$$
+\ce{aA_{(g)} + bB_{(g)} + \dots &lt;-> rR_{(g)} + sS_{(g)} + \dots}
+$$</p><p>where $A$, $B$, $\dots$ are the reactants and $R$, $S$, $\dots$ are the
+products.</p><p>Suppose the system is currently in equilibrium. Then the initial reaction quotient $Q_0$
+and the equilibrium constant $K_c$ must necessarily be equal, so</p><p>$$
+Q_0 = K_c = \frac{[R]^r[S]^s\cdots}{[A]^a[B]^b\cdots}. \tag{1}
+$$</p><p>Our goal now is to relate concentration to the total pressure of the system, say $P_0$.
+Recall that concentration $c = n/V$ where $n$ denotes the number of
+moles and the $V$ the volume. Rearranging the ideal gas law $PV = nRT$ to
+isolate $n/V$ yields</p><p>$$
+\frac{n}{V} = \frac{P}{RT} = c. \tag{2}
+$$</p><p>Note that we cannot directly substitute this back into Equation 1 yet as each
+gas has its own partial pressure &ndash; that is, the $P$ for each gas is different.
+To account for this, recall that</p><p>$$
+p_X = p_{\Sigma} \frac{n_X}{n_{\Sigma}}
+$$</p><p>that is, the partial pressure is the total pressure scaled by the mole fraction.
+Combining this with Equation 2 yields an expression for the concentration of
+any gas (say $X$) in the reaction in terms of the total pressure of the system:</p><p>$$
+c_X = [X] = \frac{p_X}{RT} = \frac{P_0n_{\Sigma}}{RTn_X} \tag{3}
+$$</p><p>Substituting the final expression for concentration into Equation 1 and
+factoring out the part dependent on pressure, we get</p><p>$$
+\begin{align*}
+Q_0 = K_c &= \cfrac{\left(\cfrac{P_0n_{\Sigma}}{RTn_R}\right)^r\left(\cfrac{P_0n_{\Sigma}}{RTn_S}\right)^s\cdots}{\left(\cfrac{P_0n_{\Sigma}}{RTn_A}\right)^a\left(\cfrac{P_0n_{\Sigma}}{RTn_B}\right)^b\cdots} \\
+&= \cfrac{{P_0}^{r + s + \dots}}{{P_0}^{a + b + \dots}} \cfrac{\left(\cfrac{n_{\Sigma}}{RTn_R}\right)^r\left(\cfrac{n_{\Sigma}}{RTn_S}\right)^s\cdots}{\left(\cfrac{n_{\Sigma}}{RTn_A}\right)^a\left(\cfrac{n_{\Sigma}}{RTn_B}\right)^b\cdots}. \tag{4}
+\end{align*}
+$$</p><p>(<em>Aside: Substituting the expression for concentration in terms of partial pressure gives us
+a rather interesting result; see <a href=#appendix-1>Appendix 1</a>.</em>)</p><p>For brevity write
+$$ \Delta n = \overbrace{(r + s + \cdots)}^{\text{tot. num of product moles}} - \underbrace{(a + b + \cdots)}_{\text{tot. num of reactant moles}} \tag{5} $$
+such that the
+pressure factor in front is just ${P_0}^{\Delta n}$. Also put</p><p>$$
+C = \cfrac{\left(\cfrac{n_{\Sigma}}{RTn_R}\right)^r\left(\cfrac{n_{\Sigma}}{RTn_S}\right)^s\cdots}{\left(\cfrac{n_{\Sigma}}{RTn_A}\right)^a\left(\cfrac{n_{\Sigma}}{RTn_B}\right)^b\cdots}
+$$</p><p>so Equation 4 simplifies to just</p><p>$$
+Q_0 = K_c = C{P_0}^{\Delta n}. \tag{6}
+$$</p><p>Now consider what happens when the pressure is increased to $P_1$. The
+equilibrium constant $K_c$ does not change since it is only affected by
+temperature. What about the reaction quotient, $Q_1$? The factor $C$ from
+Equation 6 remains the same, so the only change is replacing $P_0$ with $P_1$:</p><p>$$
+Q_1 = C{P_1}^{\Delta n}.
+$$</p><p>Evidently the reaction quotient $Q_1$ is no longer equal to the equilibrium constant,
+so the equlibrium position will shift to restore equilibrium. To determine whether
+the forward or reverse reaction will be favored, we just need to compare $Q_1$ to $K_c$.
+Without loss of generality, consider the case where $Q_1$ is smaller:</p><p>$$
+\begin{align*}
+Q_1 &&lt; K_c \\
+CP_1^{\Delta n} &&lt; CP_0^{\Delta n} \\
+P_1^{\Delta n} &&lt; P_0^{\Delta n}.
+\end{align*}
+$$</p><p>Since $P_1 > P_0$, this can only be the case if $\Delta n &lt; 0$. But we defined $\Delta n$ as the
+total moles of gas on the product side subtract the total moles of gas on the reactant side, so</p><p>$$
+\begin{align*}
+\Delta n &&lt; 0 \\
+\sum n_{\rm{products}} - \sum n_{\rm{reactants}} &&lt; 0 \\
+\sum n_{\rm{products}} &&lt; \sum n_{\rm{reactants}}.
+\end{align*}
+$$</p><p>In other words, $Q_1 &lt; K_c$ if and only if there are fewer moles of gas on the
+product side. But $Q_1 &lt; K_c$ also implies that the equilibrium position should
+shift rightward (favoring products.) The analysis for the case in which there are
+fewer moles of gas on the reactant side is similar &ndash; the equilibrium position
+shifts leftward favoring reactants, which is what we wanted to show. $\square$</p><h2 id=appendix-1>Appendix 1: Equilibrium Constant for Partial Pressures
+<span><a href=#appendix-1><svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><p>As part of our proof, we derived the following relationship (Equation 3):</p><p>$$
+c_X = [X] = \frac{p_X}{RT} = \frac{P_0n_{\Sigma}}{RTn_X}.
+$$</p><p>Recall that we originally substituted the final expression,</p><p>$$
+\frac{P_0n_{\Sigma}}{RTn_X}
+$$</p><p>back into the equilibrium constant expression (leading to Equation 4). However,
+if instead we substitute the expression</p><p>$$
+\frac{p_X}{RT}
+$$</p><p>then we get something rather intriguing:</p><p>$$
+\begin{align*}
+K_c &= \cfrac{\left(\cfrac{p_R}{RT}\right)^r\left(\cfrac{p_S}{RT}\right)^s\cdots}{\left(\cfrac{p_A}{RT}\right)^a\left(\cfrac{p_B}{RT}\right)^b\cdots} \\
+&= \frac{{p_R}^r{p_S}^s\cdots}{{p_A}^a{p_B}^b\cdots} (RT)^{(a + b + \dots) - (r + s + \dots)}.
+\end{align*}
+$$</p><p>Indeed, observe that at constant temperature, the factor
+$$ (RT)^{(a + b + \dots) - (r + s + \dots)} $$
+is constant. But if the temperature is constant $K_c$ must, too, be constant,
+so that means the expression</p><p>$$
+\frac{{p_R}^r{p_S}^s\cdots}{{p_A}^a{p_B}^b\cdots}
+$$</p><p>is a constant as well! This expression may thus be viewed as a kind of
+equlibrium constant, the difference being that it is calculated using partial
+pressures instead of concentration. For this reason, it is often referred to as
+the
+<a href=https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Equilibria/Chemical_Equilibria/Calculating_An_Equilibrium_Concentrations/Calculating_an_Equilibrium_Constant_Using_Partial_Pressures><em>equilibrium constant using partial pressures</em></a>,
+denoted $K_p$. The relationship between $K_c$ and $K_p$ is readily given by
+isolating $K_p$ in Equation 7:</p><p>$$
+\begin{align*}
+K_c &= K_p (RT)^{(a + b + \dots) - (r + s + \dots)} \\
+K_p &= K_c (RT)^{(r + s + \dots) - (a + b + \dots)} \\
+K_p &= K_c (RT)^{\Delta n}
+\end{align*}
+$$</p><p>where $\Delta n$ is as defined in Equation 5.</p></div><div class=post-info><div class="post-date dt-published">2023-07-18</div><a class="post-hidden-url u-url" href=https://jo3-l.github.io/posts/pressure-and-equilibrium/>https://jo3-l.github.io/posts/pressure-and-equilibrium/</a>
+<a href=https://jo3-l.github.io class="p-name p-author post-hidden-author h-card" rel=me>Joe L.</a><div class=post-taxonomies><ul class=post-tags><li><a href=https://jo3-l.github.io/tags/math/>#math</a></li><li><a href=https://jo3-l.github.io/tags/chemistry/>#chemistry</a></li></ul></div></div></article></main><footer class=common-footer><div class=common-footer-bottom><div class=copyright><p>© Joe L., 2023<br>Powered by <a target=_blank rel="noopener noreferrer" href=https://gohugo.io/>Hugo</a>, theme <a target=_blank rel="noopener noreferrer" href=https://github.com/mitrichius/hugo-theme-anubis>Anubis</a>.<br></p></div><script>const STORAGE_KEY="user-color-scheme",defaultTheme="auto-without-switcher";let currentTheme,switchButton,autoDefinedScheme=window.matchMedia("(prefers-color-scheme: dark)");const autoChangeScheme=e=>{currentTheme=e.matches?"dark":"light",document.documentElement.setAttribute("data-theme",currentTheme),changeButtonText()};document.addEventListener("DOMContentLoaded",function(){switchButton=document.querySelector(".theme-switcher"),currentTheme=detectCurrentScheme(),currentTheme=="dark"&&document.documentElement.setAttribute("data-theme","dark"),currentTheme=="auto"&&(autoChangeScheme(autoDefinedScheme),autoDefinedScheme.addListener(autoChangeScheme)),switchButton&&(changeButtonText(),switchButton.addEventListener("click",switchTheme,!1)),showContent()});function detectCurrentScheme(){return localStorage.getItem(STORAGE_KEY)?localStorage.getItem(STORAGE_KEY):defaultTheme?defaultTheme:window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light":"light"}function changeButtonText(){switchButton&&(switchButton.textContent=currentTheme=="dark"?"Light theme":"Dark theme")}function switchTheme(){currentTheme=="dark"?(localStorage.setItem(STORAGE_KEY,"light"),document.documentElement.setAttribute("data-theme","light"),currentTheme="light"):(localStorage.setItem(STORAGE_KEY,"dark"),document.documentElement.setAttribute("data-theme","dark"),currentTheme="dark"),changeButtonText()}function showContent(){document.body.style.visibility="visible",document.body.style.opacity=1}</script></div><p class="h-card vcard"><a href=https://jo3-l.github.io class="p-name u-url url fn" rel=me>Joe L.</a></p></footer></div></body></html>
