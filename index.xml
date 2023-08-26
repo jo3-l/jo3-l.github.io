@@ -28,7 +28,7 @@ where $Q$ is smaller), then we&amp;rsquo;ll have proven the desired claim.&lt;/p
 &lt;/span>
 &lt;/h1>&lt;p>Consider the general reaction&lt;/p>
 &lt;p>$$
-\ce{aA_{(g)} + bB_{(g)} + \dots &amp;lt;-&amp;gt; rR_{(g)} + sS_{(g)} + \dots}
+\ce{aA_{(g)} + bB_{(g)} + \dots &amp;lt;=&amp;gt; rR_{(g)} + sS_{(g)} + \dots}
 $$&lt;/p>
 &lt;p>where $A$, $B$, $\dots$ are the reactants and $R$, $S$, $\dots$ are the
 products.&lt;/p>
